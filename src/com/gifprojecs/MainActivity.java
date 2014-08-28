@@ -23,8 +23,9 @@ public class MainActivity extends ActionBarActivity {
 		InputStream is=null;
 		try {
 			is=getAssets().open("mountain_climbing.gif");
-			SampleView sampleView=new SampleView(this);
-			setContentView(sampleView);
+			 GifDecoderView view = new GifDecoderView(this, is);
+			//SampleView sampleView=new SampleView(this);
+			setContentView(view);
 		} catch (IOException e) {
 			
 			e.printStackTrace();
@@ -32,7 +33,9 @@ public class MainActivity extends ActionBarActivity {
 
 		
 	}
-	private static class SampleView extends View {
+	
+	//never used
+	/*private static class SampleView extends View {
         private Bitmap mBitmap;
         private Bitmap mBitmap2;
         private Bitmap mBitmap3;
@@ -78,7 +81,7 @@ public class MainActivity extends ActionBarActivity {
             mBitmap = bm;
            
             // decode an image with transparency
-            is = context.getResources().openRawResource(R.drawable.mountain_climbing);
+          /*  is = context.getResources().openRawResource(R.drawable.mountain_climbing);
             mBitmap2 = BitmapFactory.decodeStream(is);
            
             // create a deep copy of it using getPixels() into different configs
@@ -89,9 +92,9 @@ public class MainActivity extends ActionBarActivity {
             mBitmap3 = Bitmap.createBitmap(pixels, 0, w, w, h,
                                            Bitmap.Config.ARGB_8888);
             mBitmap4 = Bitmap.createBitmap(pixels, 0, w, w, h,
-                                           Bitmap.Config.ARGB_4444);
+                                           Bitmap.Config.ARGB_4444);*/
            
-            mDrawable = context.getResources().getDrawable(R.drawable.mountain_climbing);
+         /*   mDrawable = context.getResources().getDrawable(R.drawable.mountain_climbing);
             mDrawable.setBounds(150, 20, 300, 100);
            
             is = context.getResources().openRawResource(R.drawable.mountain_climbing);
@@ -110,9 +113,9 @@ public class MainActivity extends ActionBarActivity {
             p.setAntiAlias(true);
            
             canvas.drawBitmap(mBitmap, 10, 10, null);
-            canvas.drawBitmap(mBitmap2, 10, 170, null);
-            canvas.drawBitmap(mBitmap3, 110, 170, null);
-            canvas.drawBitmap(mBitmap4, 210, 170, null);
+            //canvas.drawBitmap(mBitmap2, 10, 170, null);
+            //canvas.drawBitmap(mBitmap3, 110, 170, null);
+            //canvas.drawBitmap(mBitmap4, 210, 170, null);
            
             mDrawable.draw(canvas);
            
@@ -132,6 +135,6 @@ public class MainActivity extends ActionBarActivity {
                 invalidate();
             }
         }
-    }
+    }*/
 
 }
